@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Appraisal Results</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Category</th>
+                <th>Actual Percentage</th>
+                <th>Deviation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="appraisal : ${appraisals}">
+                <td th:text="${appraisal.employeeId}"></td>
+                <td th:text="${appraisal.employeeName}"></td>
+                <td th:text="${appraisal.category}"></td>
+                <td th:text="${appraisal.actualPercentage} + '%'"></td>
+                <td th:text="${appraisal.deviation}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
